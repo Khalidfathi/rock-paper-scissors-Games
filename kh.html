@@ -8,12 +8,12 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href=
+      href="title.jpg"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="app.js" defer></script>
+    <script src="main.js" defer></script>
 
-    <title>Rock Paper Scissors</title>
+    <title> Rock, Paper, Scissors</title>
   </head>
   <body class="preload">
     <div class="container">
@@ -24,7 +24,24 @@
           <div class="score__number">0</div>
         </div>
       </header>
-      </div>
+      <section class="game">
+        <button class="choice-btn" data-choice="paper">
+          <div class="choice paper">
+            <img src="icon-paper.svg" alt="Paper" />
+          </div>
+        </button>
+        <button class="choice-btn" data-choice="scissors">
+          <div class="choice scissors">
+            <img src="icon-scissors.svg" alt="Scissors" />
+          </div>
+        </button>
+        <button class="choice-btn" data-choice="rock">
+          <div class="choice rock">
+            <img src="icon-rock.svg" alt="Rock" />
+          </div>
+        </button>
+      </section>
+    </div>
+
   </body>
 </html>
-     
