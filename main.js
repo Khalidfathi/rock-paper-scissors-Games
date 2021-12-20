@@ -1,18 +1,12 @@
-
-
-
-
 // Prevent animation on load
 setTimeout(() => {
   document.body.classList.remove("preload");
 }, 500);
 
-setTimeout(() => {
-  document.body.classList.remove("preload");
-}, 500);
-
 // DOM
-
+const btnRules = document.querySelector(".rules-btn");
+const btnClose = document.querySelector(".close-btn");
+const modalRules = document.querySelector(".modal");
 
 const CHOICES = [
   {
@@ -28,48 +22,15 @@ const CHOICES = [
     beats: "scissors",
   },
 ];
-
-
-//document element 
 const choiceButtons = document.querySelectorAll(".choice-btn");
 const gameDiv = document.querySelector(".game");
+const resultsDiv = document.querySelector(".results");
+const resultDivs = document.querySelectorAll(".results__result");
 
-const scoreNumber = document.querySelector(".score__number");
-let score = 0;
-function isWinner(results) {
-  return results[0].beats === results[1].name;
-}
+const resultWinner = document.querySelector(".results__winner");
+const resultText = document.querySelector(".results__text");
 
-function keepScore(point) {
-  score += point;
-  scoreNumber.innerText = score;
-}
-// Game Logic
-choiceButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const choiceName = button.dataset.choice;
-    const choice = CHOICES.find((choice) => choice.name === choiceName);
-    choose(choice);
-  });
-});
-
-function choose(choice) {
-  const aichoice = computerChoose();
-  displayResults([choice, aichoice]);
-  displayWinner([choice, aichoice]);
-}
-
-function computerChoose() {
-  const rand = Math.floor(Math.random() * CHOICES.length);
-  return CHOICES[rand];
-}
-
-
-const choiceButtons = document.querySelectorAll(".choice-btn");
-const gameDiv = document.querySelector(".game");
-
-
-
+const playAgainBtn = document.querySelector(".play-again");
 
 const scoreNumber = document.querySelector(".score__number");
 let score = 0;
@@ -153,6 +114,3 @@ playAgainBtn.addEventListener("click", () => {
   resultWinner.classList.toggle("hidden");
   resultsDiv.classList.toggle("show-winner");
 });
-
-
-
