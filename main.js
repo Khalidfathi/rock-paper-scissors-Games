@@ -36,7 +36,14 @@ const gameDiv = document.querySelector(".game");
 
 const scoreNumber = document.querySelector(".score__number");
 let score = 0;
+function isWinner(results) {
+  return results[0].beats === results[1].name;
+}
 
+function keepScore(point) {
+  score += point;
+  scoreNumber.innerText = score;
+}
 // Game Logic
 choiceButtons.forEach((button) => {
   button.addEventListener("click", () => {
