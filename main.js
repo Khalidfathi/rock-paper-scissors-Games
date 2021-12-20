@@ -1,7 +1,5 @@
 
-"use strict";
-(function() 
-{
+
 
 
 // Prevent animation on load
@@ -92,4 +90,3 @@ function aiChoose() {
 
 
 
-});
